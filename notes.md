@@ -6,13 +6,15 @@ pip3 install pipenv
 
 pipenv install django
 
+pipenv shell //start python interpreter inside the virtual env
+
 ```django-admin startproject storefront .```  (in current directory)
 
 **manage.py**
 
 Take configuration into consideration
 ```
-python manage.py start-server [port=8000]
+python manage.py runserver [port=8000]
 ```
 
 
@@ -76,6 +78,21 @@ python manage.py sqlmigrate store 0003 //this will show actual sql code for migr
 python manage.py migrate store 0004 (assume we have 0005)
 
 remove the 0005 mgiration file and related code chagnes in the code
+```
+
+
+***Do Mysql***
+To work with MacOs(self research)
+
+brew install mysql pkg-config
+pip install mysqlclient
+
+Command + Shift + O: to see synmbols in vscode, can be variable, functions,classes, etc
+
+
+**Using empty migration**
+```
+python manage.py makemigrations store --empty
 ```
 
 
