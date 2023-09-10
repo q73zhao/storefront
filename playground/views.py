@@ -1,13 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from store.models import Product
 # Create your views here.
 # Request handler
 
-def calculate():
-    x = 1
-    y = 2
-
-    return x
 def say_hello(request):
 
     # Pull data from db
@@ -15,9 +11,14 @@ def say_hello(request):
     # Send Email
 
     # return HttpResponse('Hello World')
+    query_set = Product.objects.all() 
 
-    x = calculate()
-    
+    # for product in query_set:
+    #     print(product)
+    #    list(query_set)
+    # query_set[0:5]
+
+
     return render(request, 'hello.html', {'name': 'Mosh'})
 
 

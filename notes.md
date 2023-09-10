@@ -96,10 +96,25 @@ python manage.py makemigrations store --empty
 ```
 
 
+**Object Relational Mapping**
 
+Reduce complexity in code, but  sql code is still needed when dealing with complicated query.
 
+Migrations are part of django's RM
 
-
+- model.objects 
+  - returns a *manager* object, which is an interface to the database
+  - model.objects.all() for example returns a *query set*  , which is an object encapsulates a query
+  - query set is lazy, evaluated at a later time
+  - We can use query set to build complex query
+  
+```
+for product in query_set:
+  print(product)
+list(query_set)
+query_set[0:5]
+query_set.filter().filter().orderby()
+```
 
 
 
